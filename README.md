@@ -27,11 +27,12 @@ Create custom boot image
 Example:
 ```
 docker run --privileged -v $(pwd):/opt/work -t create_ks_bootiso \
-    customiso \
+    /bin/sh customiso \
     --isolinuxcfg isolinux.cfg \
+    --grubcfg grub.cfg \
     --kickstart ks.cfg \
-    --output-bootiso custom-boot.iso \
-    CentOS-7-x86_64-DVD-1511.iso
+    --output-bootiso rhel7.7_custom_install.iso \
+    rhel-server-7.7-x86_64-dvd.iso
 ```
 
 Remove all stoped dockers
